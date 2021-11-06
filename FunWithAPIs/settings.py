@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'RandomFox',
     'Home',
+    'Weather',
 ]
 
 MIDDLEWARE = [
