@@ -12,5 +12,6 @@ def weather(request):
     while k <= 63:
         districts.append(data['districts'][k]['name'])
         k += 1
+    districts.sort()
     context = {'districts': districts}
     return render(request, 'Weather/weather.html', context)
