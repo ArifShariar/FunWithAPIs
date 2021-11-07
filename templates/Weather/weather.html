@@ -1,16 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Weather</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var availableTags = [
+        {% for district in districts %}
+                "{{ district }}",
+        {% endfor %}
+    ];
+    $( "#districts" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
 </head>
+
+
 <body>
-<h1>This is the weather page</h1>
-<h2>Get Weather forecast here</h2>
-<form action="" method="post">
-    <label for="city">City:</label>
-    <input type="text" name="city" id="city">
-    <input type="submit" value="Get Weather">
-</form>
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="districts">District:</label>
+            <input type="text" name="districts" id="districts">
+            <input type="submit" value="Get Weather">
+        </form>
+    </div>
 </body>
 </html>
