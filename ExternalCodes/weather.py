@@ -1,7 +1,10 @@
 import requests
 
 # api from openweathermap.org
-response = requests.get('http://api.openweathermap.org/data/2.5/weather?q=Dhaka,Bangladesh&appid=03c0dcc9761cb8f6c56ef511f958d11d')
+response = requests.get('http://api.openweathermap.org/data/2.5/weather?q=Dhaka&appid=03c0dcc9761cb8f6c56ef511f958d11d')
+print(response.json())
+
+response = requests.get('http://api.openweathermap.org/data/2.5/weather?q=Bogra&appid=03c0dcc9761cb8f6c56ef511f958d11d')
 print(response.json())
 
 # api from qoweaer.herokuapp.com
