@@ -29,7 +29,7 @@
 
 <body>
     <div class="container-fluid">
-        <form>
+        <form id="weather-form" method="get">
         {% csrf_token %}
             <div class="form-group">
                 <label for="selectDistrict" >Select District</label>
@@ -38,7 +38,7 @@
                         <option>{{ district }}</option>
                     {% endfor %}
                 </select>
-                <button type="submit" class="btn btn-success btn-lg btn-block">Check Weather!</button>
+                <input type="submit" class="btn btn-success btn-lg btn-block">
             </div>
         </form>
     </div>
@@ -46,6 +46,24 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).on('submit','#weather-form', function (e){
+            e.preventDefault();
+            var district = $('#selectDistrict').val();
+            $.ajax({
+                url: '/weather/',
+                type: 'POST',
+                data: {
+                    district: district,
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+                },
+                success: function(data){
+                    $('#weather-form').html(data);
+                    alert("clicked")
+                }
+            });
+        });
 
+    </script>
 </body>
 </html>
