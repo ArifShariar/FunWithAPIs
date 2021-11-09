@@ -11,19 +11,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/weatherPage.css' %}">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-
-  <script>
-  $( function() {
-    var availableTags = [
-        {% for district in districts %}
-                "{{ district }}",
-        {% endfor %}
-    ];
-    $( "#districts" ).autocomplete({
-      source: availableTags
-    });
-  } );
-  </script>
 </head>
 
 
@@ -46,8 +33,76 @@
         </form>
     </div>
 
+        <div class="result">
+        <table class="table table-striped table-hover">
+            <tbody>
+            <tr class="table-info">
+                <th>District Name</th>
+                <td>{{ district_name }}</td>
+            </tr>
+            <tr class="table-info">
+                <th>Longitude</th>
+                <td>{{ district_name }}</td>
+            </tr>
+            <tr class="table-info">
+                <th>Latitude</th>
+                <td>{{ district_name }}</td>
+            </tr>
+            <tr class="table-info">
+                <th>Weather Condition</th>
+                <td>Clear</td>
+            </tr>
+            <tr class="table-info">
+                <th>Weather description</th>
+                <td>Clear</td>
+            </tr>
+            <tr class="table-info">
+                <th>Temperature Now (Celsius)</th>
+                <td>30 degrees</td>
+            </tr>
+            <tr class="table-info">
+                <th>Human perception of temperature (Celsius)</th>
+                <td>30 degrees</td>
+            </tr>
+            <tr class="table-info">
+                <th>Minimum temperature (Celsius)</th>
+                <td>25 degrees</td>
+            </tr>
+            <tr class="table-info">
+                <th>Maximum temperature (Celsius)</th>
+                <td>45 degrees</td>
+            </tr>
+            <tr class="table-info">
+                <th>Atmospheric Pressure (mbar)</th>
+                <td>45 degrees</td>
+            </tr>
+            <tr class="table-info">
+                <th>Humidity (%)</th>
+                <td>45 degrees</td>
+            </tr>
+            <tr class="table-info">
+                <th>Visibility</th>
+                <td>45 degrees</td>
+            </tr>
+            <tr class="table-info">
+                <th>Wind Speed (meter/second)</th>
+                <td>45 degrees</td>
+            </tr>
+            <tr class="table-info">
+                <th>Wind Direction</th>
+                <td>45 degrees</td>
+            </tr>
+            <tr class="table-info">
+                <th>Cloud cover (%)</th>
+                <td>20%</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>
