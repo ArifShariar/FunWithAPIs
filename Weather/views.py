@@ -1,12 +1,10 @@
 import json
 
+from django.http import HttpResponse
 from django.shortcuts import render
 
 
 def weather(request):
-    if request.GET.get('selectDistrict'):
-        district_name = request.GET.get('selectDistrict')
-        print(district_name)
     with open('Weather/files/bd_districts.json', encoding='utf-8') as json_file:
         data = json.load(json_file)
 
@@ -17,10 +15,16 @@ def weather(request):
         k += 1
     districts.sort()
     context = {'districts': districts}
-    return render(request, 'Weather/weather.html', context)
+    if request.POST:
+        district = request.POST.get('selectDistrict')
+        print(district)
+        return render(request, 'Weather/weather.html', context)
+    else:
+
+        return render(request, 'Weather/weather.html', context)
 
 
-def search(request):
-    if request.method == 'POST':
-        district_name = request.POST['district']
-        print(district_name)
+def weatherForecast(request):
+    district = request.POST.get('selectDistrict')
+    print(district)
+    return HttpResponse(district)
