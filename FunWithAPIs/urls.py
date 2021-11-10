@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('Home.urls')),
     path('randomFox/', include('RandomFox.urls')),
     path('weather/', include('Weather.urls')),
+    path('nasa/',include('NASA.urls')),
 ]

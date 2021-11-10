@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'RandomFox',
     'Home',
     'Weather',
+    'NASA',
 ]
 
 MIDDLEWARE = [
