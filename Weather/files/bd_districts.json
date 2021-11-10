@@ -141,7 +141,7 @@
     {
       "id": "18",
       "division_id": "5",
-      "name": "Bogura",
+      "name": "Bogra",
       "bn_name": "বগুড়া",
       "lat": "24.8465228",
       "long": "89.377755"
@@ -341,7 +341,7 @@
     {
       "id": "43",
       "division_id": "2",
-      "name": "Chattogram",
+      "name": "Chittagong",
       "bn_name": "চট্টগ্রাম",
       "lat": "22.335109",
       "long": "91.834073"
