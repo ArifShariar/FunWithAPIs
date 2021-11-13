@@ -20,3 +20,5 @@ soupsieve==2.3
 sqlparse==0.4.2
 urllib3==1.26.7
 w3lib==1.22.0
+django-allauth>=0.41.0
+django-filter>=2.4.0
